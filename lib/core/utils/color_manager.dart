@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ColorManager {
@@ -15,4 +16,6 @@ class ColorManager {
   static Color primary5Color = HexColor("#606D76");
   static Color primary6Color = HexColor("#354349");
   static Color primary7Color = HexColor("#1B262E");
+
+  static Color transparentColor = Colors.transparent;
 }

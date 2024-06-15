@@ -7,4 +7,5 @@ class StringManager {
   //HomePage
   static const titleSilverAppBar = "Hey, Halal";
   static const numCartSilverAppBar = "3";
+  static const searchHintSilverAppBar = "Search Products or store";
 }

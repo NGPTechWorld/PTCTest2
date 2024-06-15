@@ -4,6 +4,7 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/screens/home/widgets/searchbar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -67,7 +68,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            flexibleSpace: Container(),
+            flexibleSpace: Container(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      child: SearchTextBar(),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
