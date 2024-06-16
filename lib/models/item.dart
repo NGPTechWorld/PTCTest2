@@ -4,7 +4,7 @@ class Item {
   String name, details, quantity;
   double price;
   bool isDiscount;
-  int? discount;
+  int discount;
   int numReviews;
   double rate;
   List<Image>? images;
@@ -17,14 +17,18 @@ class Item {
     required this.numReviews,
     required this.rate,
     required this.isDiscount,
-    this.discount,
+    required this.discount,
     this.images,
   });
 
   double get_price() {
     if (isDiscount)
-      return price - (price * discount!);
+      return price - (price * (discount! / 100));
     else
       return price;
+  }
+
+  String get_discount() {
+    return "$discount%";
   }
 }

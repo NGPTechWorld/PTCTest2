@@ -4,6 +4,7 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
+import 'package:ptc2/screens/category/category.dart';
 import 'package:ptc2/screens/home/home.dart';
 
 class Onboardring extends StatefulWidget {
@@ -58,7 +59,7 @@ class _OnboardringState extends State<Onboardring> {
                   style: StyleManager.buttonStyle(),
                   onPressed: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()));
+                        MaterialPageRoute(builder: (_) => CategoryPage()));
                   },
                   child: Padding(
                     padding:

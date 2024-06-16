@@ -6,4 +6,8 @@ class AssetsManager {
   static const imageiconImage = "$imagesPath/imageIcon.png";
   static const cartImage = "$imagesPath/cart.png";
   static const searchImage = "$imagesPath/search.png";
+  static const homeImage = "$imagesPath/home.png";
+  static const categoryImage = "$imagesPath/category.png";
+  static const heartImage = "$imagesPath/heart.png";
+  static const more_verticalImage = "$imagesPath/more_vertical.png";
 }

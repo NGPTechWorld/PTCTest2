@@ -8,4 +8,13 @@ class StringManager {
   static const titleSilverAppBar = "Hey, Halal";
   static const numCartSilverAppBar = "3";
   static const searchHintSilverAppBar = "Search Products or store";
+  static const titleDropDowne1SilverAppBar = "DELIVERY TO";
+  static const titleDropDowne2SilverAppBar = "Within";
+  static const text1RichText = "Get";
+  static const text2RichText = " OFF";
+  static const text3RichText = "On first 03 order";
+
+  //CategoryPage
+  static const title1SilverAppBar2 = "Shop";
+  static const title2SilverAppBa2 = "By Category";
 }

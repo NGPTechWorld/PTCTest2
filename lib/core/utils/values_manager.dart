@@ -71,3 +71,7 @@ class AppSizeScreen {
   static double screenWidth = 0;
   static double screenHeight = 0;
 }
+
+class AppSizeWidget {
+  static const double discountSize = 150;
+}

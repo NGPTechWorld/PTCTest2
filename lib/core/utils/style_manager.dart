@@ -356,4 +356,33 @@ class StyleManager {
       padding: EdgeInsets.symmetric(horizontal: AppPadding.p20),
     );
   }
+
+  //Label
+  static TextStyle label_Medium(
+      {Color color = Colors.black,
+      double fontsize = AppSize.s12,
+      FontWeight fontweight = FontWeight.w500,
+      TextDecoration styletext = TextDecoration.none}) {
+    return TextStyle(
+      fontSize: fontsize,
+      fontWeight: fontweight,
+      fontFamily: 'Manrope',
+      color: color,
+      decoration: styletext,
+    );
+  }
+
+  static TextStyle label_Regular(
+      {Color color = Colors.black,
+      double fontsize = AppSize.s12,
+      FontWeight fontweight = FontWeight.w400,
+      TextDecoration styletext = TextDecoration.none}) {
+    return TextStyle(
+      fontSize: fontsize,
+      fontWeight: fontweight,
+      fontFamily: 'Manrope',
+      color: color,
+      decoration: styletext,
+    );
+  }
 }
