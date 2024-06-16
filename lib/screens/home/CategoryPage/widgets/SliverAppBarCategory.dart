@@ -5,16 +5,15 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/home/widgets/searchbar.dart';
 
-class Sliverappbar2 extends StatefulWidget {
-  const Sliverappbar2({super.key});
+class SliverAppBarCategory extends StatefulWidget {
+  const SliverAppBarCategory({super.key});
 
   @override
-  _Sliverappbar2State createState() => _Sliverappbar2State();
+  _SliverAppBarCategoryState createState() => _SliverAppBarCategoryState();
 }
 
-class _Sliverappbar2State extends State<Sliverappbar2> {
+class _SliverAppBarCategoryState extends State<SliverAppBarCategory> {
   String? selectedValue;
   final List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 

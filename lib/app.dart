@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/onboardring/onboardring.dart';
+import 'package:ptc2/screens/onboardring/OnBoardring.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

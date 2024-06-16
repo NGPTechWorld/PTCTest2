@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/const/const.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/home/widgets/searchbar.dart';
+import 'package:ptc2/screens/Home/GroceryHome/widgets/SearchBar.dart';
 
-class Sliverappbar extends StatefulWidget {
-  const Sliverappbar({super.key});
+class SliverAppBarHome extends StatefulWidget {
+  const SliverAppBarHome({super.key});
 
   @override
-  _SliverappbarState createState() => _SliverappbarState();
+  _SliverAppBarHomeState createState() => _SliverAppBarHomeState();
 }
 
-class _SliverappbarState extends State<Sliverappbar> {
+class _SliverAppBarHomeState extends State<SliverAppBarHome> {
   String? selectedValue;
   final List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 

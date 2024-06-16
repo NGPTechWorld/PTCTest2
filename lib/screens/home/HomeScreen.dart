@@ -2,54 +2,67 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/widgets/BottomNavicationBar.dart';
+import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/screens/Home/GroceryHome/widgets/DiscountSlider.dart';
+import 'package:ptc2/screens/home/CategoryPage/CategoryScreen.dart';
+import 'package:ptc2/screens/home/GroceryHome/GroceryHomeScreen.dart';
 
-class CurvedBottomNavigationBar extends StatefulWidget {
-  const CurvedBottomNavigationBar({super.key});
-
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
   @override
-  State<CurvedBottomNavigationBar> createState() =>
-      _CurvedBottomNavigationBarState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _CurvedBottomNavigationBarState extends State<CurvedBottomNavigationBar> {
-  int index = 0;
-  @override
+class _HomeScreenState extends State<HomeScreen> {
+  int indexPage = 0;
+  final List<Widget> _pages = [
+    GroceryHomeScreen(),
+    CategoryScreen(),
+  ];
+  void setIndex(int index) {
+    setState(() {
+      indexPage = index;
+    });
+  }
+
   Widget build(BuildContext context) {
-    return Container(
-      child: CurvedNavigationBarCustom(
+    return Scaffold(
+      body: IndexedStack(
+        index: indexPage,
+        children: _pages,
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
         color: ColorManager.primary3Color,
         backgroundColor: ColorManager.transparentColor,
         buttonBackgroundColor: ColorManager.primary7Color,
         onTap: (value) {
           setState(() {
-            index = value;
-            print(index);
+            indexPage = value;
           });
         },
-        index: index,
+        index: indexPage,
         items: [
           Image.asset(
             AssetsManager.homeImage,
-            color: index == 0
+            color: indexPage == 0
                 ? ColorManager.primary1Color
                 : ColorManager.primary7Color,
           ),
           Image.asset(
             AssetsManager.categoryImage,
-            color: index == 1
+            color: indexPage == 1
                 ? ColorManager.primary1Color
                 : ColorManager.primary7Color,
           ),
           Image.asset(
             AssetsManager.heartImage,
-            color: index == 2
+            color: indexPage == 2
                 ? ColorManager.primary1Color
                 : ColorManager.primary7Color,
           ),
           Image.asset(
             AssetsManager.more_verticalImage,
-            color: index == 3
+            color: indexPage == 3
                 ? ColorManager.primary1Color
                 : ColorManager.primary7Color,
           )
