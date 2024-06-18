@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 class Item {
+  int id;
   String name, details, quantity;
+  String category;
   double price;
   bool isDiscount;
   int discount;
   int numReviews;
   double rate;
-  List<Image>? images;
+  List<String>? images;
 
   Item({
+    required this.id,
     required this.name,
+    required this.category,
     required this.details,
     required this.quantity,
     required this.price,

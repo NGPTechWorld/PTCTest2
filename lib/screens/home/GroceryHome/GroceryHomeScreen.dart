@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/DiscountSlider.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/SliverAppBarHome.dart';
+import 'package:ptc2/screens/home/GroceryHome/widgets/Recommended.dart';
 
 class GroceryHomeScreen extends StatefulWidget {
   const GroceryHomeScreen({super.key});
@@ -21,7 +22,7 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
           SliverToBoxAdapter(
             child: SizedBox(
                 height: AppSizeWidget.discountSize, child: DiscountSlider()),
-          )
+          ),
         ],
       ),
     );

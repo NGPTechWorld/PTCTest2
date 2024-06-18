@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
@@ -6,6 +5,7 @@ import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/DiscountSlider.dart';
 import 'package:ptc2/screens/home/CategoryPage/CategoryScreen.dart';
 import 'package:ptc2/screens/home/GroceryHome/GroceryHomeScreen.dart';
+import 'package:ptc2/screens/home/widgets/BottomNavicationBar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         index: indexPage,
         children: _pages,
       ),
-      bottomNavigationBar: CurvedNavigationBar(
+      bottomNavigationBar: CurvedNavigationBarCustom(
         color: ColorManager.primary3Color,
         backgroundColor: ColorManager.transparentColor,
         buttonBackgroundColor: ColorManager.primary7Color,

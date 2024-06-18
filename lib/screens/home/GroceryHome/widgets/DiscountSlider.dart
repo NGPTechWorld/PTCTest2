@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/const/const.dart';
+import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -33,7 +33,7 @@ class _DiscountSliderState extends State<DiscountSlider> {
               ),
               child: Row(
                 children: [
-                  Image.asset(AssetsManager.imageiconImage),
+                  Image.asset(itemsApp[index].images![0]),
                   Padding(
                     padding: const EdgeInsets.all(AppPadding.p10),
                     child: RichText(

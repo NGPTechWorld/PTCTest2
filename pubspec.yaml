@@ -36,7 +36,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   hexcolor: ^3.0.1
-  curved_navigation_bar: ^1.0.6
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +62,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - lib/core/data/data_source/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
