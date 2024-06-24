@@ -20,11 +20,11 @@ class _DiscountSliderState extends State<DiscountSlider> {
       scrollDirection: Axis.horizontal,
       itemCount: itemsApp.length,
       itemBuilder: (context, index) {
-        if (itemsApp[index].isDiscount)
+        if (itemsApp[index].isDiscount) {
           return Padding(
             padding: const EdgeInsets.all(AppPadding.p10),
             child: Container(
-              height: AppSizeWidget.discountSize,
+              height: AppSizeWidget.cardSize,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSize.s16),
                 color: (itemsApp[index].discount >= 50)
@@ -56,8 +56,9 @@ class _DiscountSliderState extends State<DiscountSlider> {
               ),
             ),
           );
-        else
+        } else {
           return Container();
+        }
       },
     );
   }

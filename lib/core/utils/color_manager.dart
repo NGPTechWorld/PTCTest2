@@ -8,7 +8,7 @@ class ColorManager {
   static Color firstDarkColor = HexColor("#153075");
   static Color secoundColor = HexColor("#FFC83A");
   static Color secoundDarkColor = HexColor("#F9B023");
-
+  static Color secoundLightColor = HexColor("#E4DDCB");
   static Color primary1Color = HexColor("#F8F9FB");
   static Color primary2Color = HexColor("#E7ECF0");
   static Color primary3Color = HexColor("#C5CDD2");
@@ -16,6 +16,7 @@ class ColorManager {
   static Color primary5Color = HexColor("#606D76");
   static Color primary6Color = HexColor("#354349");
   static Color primary7Color = HexColor("#1B262E");
-
+  static Color whiteColor = HexColor("#FFFFFF");
+  static Color blackColor = HexColor("#000000");
   static Color transparentColor = Colors.transparent;
 }

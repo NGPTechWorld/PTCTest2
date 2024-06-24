@@ -74,5 +74,5 @@ class AppSizeScreen {
 }
 
 class AppSizeWidget {
-  static const double discountSize = 150;
+  static const double cardSize = 150;
 }

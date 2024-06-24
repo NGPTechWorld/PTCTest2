@@ -21,7 +21,7 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: false,
-      floating: true,
+      floating: false,
       expandedHeight: AppSizeScreen.screenHeight / 3,
       backgroundColor: ColorManager.firstColor,
       stretch: true,
@@ -86,17 +86,53 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(StringManager.titleDropDowne1SilverAppBar,
+                        style: StyleManager.label_Medium(
+                            color: ColorManager.primary3Color)),
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: selectedValue,
+                        hint: Text(
+                          'Select an item',
+                          style: TextStyle(color: ColorManager.primary1Color),
+                        ),
+                        dropdownColor: ColorManager.firstColor,
+                        iconEnabledColor: ColorManager.primary1Color,
+                        items: items.map((String item) {
+                          return DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style:
+                                  TextStyle(color: ColorManager.primary1Color),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedValue = newValue;
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(StringManager.titleDropDowne1SilverAppBar,
+                  Text(StringManager.titleDropDowne2SilverAppBar,
                       style: StyleManager.label_Medium(
                           color: ColorManager.primary3Color)),
                   DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
                       value: selectedValue,
                       hint: Text(
-                        'Select an item',
+                        'Select',
                         style: TextStyle(color: ColorManager.primary1Color),
                       ),
                       dropdownColor: ColorManager.firstColor,

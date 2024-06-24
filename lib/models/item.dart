@@ -25,14 +25,23 @@ class Item {
     this.images,
   });
 
-  double get_price() {
+  double get_priceDiscont() {
     if (isDiscount)
       return price - (price * (discount! / 100));
     else
       return price;
   }
 
+  String get_price() {
+    return "\$$price";
+  }
+
   String get_discount() {
     return "$discount%";
+  }
+
+  @override
+  String toString() {
+    return 'Item(id: $id, name: $name, category: $category, details: $details, quantity: $quantity, price: ${get_price()}, isDiscount: $isDiscount, discount: ${get_discount()}, numReviews: $numReviews, rate: $rate, images: $images)';
   }
 }
