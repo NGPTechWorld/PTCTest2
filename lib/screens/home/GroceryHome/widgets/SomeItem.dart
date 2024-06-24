@@ -14,7 +14,7 @@ class SomeItem extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.8,
+        childAspectRatio: 0.85,
         mainAxisSpacing: AppPadding.p10,
         crossAxisSpacing: AppPadding.p10,
       ),

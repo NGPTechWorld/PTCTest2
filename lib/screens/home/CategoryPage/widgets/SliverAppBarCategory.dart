@@ -21,7 +21,7 @@ class _SliverAppBarCategoryState extends State<SliverAppBarCategory> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: false,
-      floating: true,
+      floating: false,
       expandedHeight: AppSizeScreen.screenHeight / 3,
       backgroundColor: ColorManager.firstColor,
       stretch: true,
