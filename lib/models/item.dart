@@ -25,11 +25,14 @@ class Item {
     this.images,
   });
 
-  double get_priceDiscont() {
-    if (isDiscount)
-      return price - (price * (discount! / 100));
-    else
-      return price;
+  String get_priceDiscont() {
+    double priceD = 0;
+    if (isDiscount) {
+      priceD = price - (price * (discount / 100));
+      return '\$$priceD OFF';
+    } else {
+      return "";
+    }
   }
 
   String get_price() {

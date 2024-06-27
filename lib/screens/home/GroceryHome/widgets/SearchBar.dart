@@ -11,6 +11,7 @@ class SearchTextBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      autofocus: false,
       style: StyleManager.body02_Medium(color: ColorManager.primary1Color),
       cursorColor: ColorManager.primary1Color,
       decoration: InputDecoration(

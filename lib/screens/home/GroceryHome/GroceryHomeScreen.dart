@@ -25,8 +25,8 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
         color: ColorManager.whiteColor,
         child: CustomScrollView(
           slivers: [
-            SliverAppBarHome(),
-            SliverToBoxAdapter(
+            const SliverAppBarHome(),
+            const SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(AppPadding.p10),
                 child: SizedBox(
@@ -45,13 +45,13 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
             ),
             SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.all(AppPadding.p10),
+                padding: const EdgeInsets.all(AppPadding.p10),
                 child: SizedBox(
                     height: AppSizeScreen.screenHeight / 3.7,
-                    child: RecommendedList()),
+                    child: const RecommendedList()),
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(AppPadding.p10),
                 child:
@@ -68,10 +68,10 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
                 ),
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(AppPadding.p10),
-                child: SomeItem(), // هنا يتم تضمين SomeItem بشكل مباشر
+                child: SomeItem(),
               ),
             ),
           ],

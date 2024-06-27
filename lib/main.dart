@@ -8,8 +8,6 @@ import 'package:ptc2/models/item.dart';
 
 void main() {
   categoryCach.categoryscahe.addAll(categorys);
-  print("hajar");
-  print(categoryCach.categoryscahe.length);
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(const MyApp());

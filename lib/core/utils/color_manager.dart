@@ -19,4 +19,5 @@ class ColorManager {
   static Color whiteColor = HexColor("#FFFFFF");
   static Color blackColor = HexColor("#000000");
   static Color transparentColor = Colors.transparent;
+  static Color textDetailsColor = HexColor("#8891A5");
 }
