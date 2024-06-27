@@ -32,14 +32,6 @@ class _ProductDetailsScreenStyle1State
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        color: ColorManager.primary1Color,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p18, vertical: AppPadding.p20),
-          child: ButtonProduct(item: widget.item),
-        ),
-      ),
     );
   }
 }

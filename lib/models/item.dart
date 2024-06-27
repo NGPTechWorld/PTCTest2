@@ -29,14 +29,14 @@ class Item {
     double priceD = 0;
     if (isDiscount) {
       priceD = price - (price * (discount / 100));
-      return '\$$priceD OFF';
+      return '\$${priceD.toStringAsFixed(2)} OFF';
     } else {
       return "";
     }
   }
 
   String get_price() {
-    return "\$$price";
+    return "\$${price.toStringAsFixed(2)}";
   }
 
   String get_discount() {

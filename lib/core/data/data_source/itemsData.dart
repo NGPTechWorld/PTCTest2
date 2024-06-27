@@ -7,7 +7,7 @@ List<Item> itemsApp = [
     name: "Apple",
     price: 1.5,
     details:
-        "Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple",
+        "Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple Fresh and juicy apple",
     quantity: "1 kg",
     category: "Fruits",
     isDiscount: true,
