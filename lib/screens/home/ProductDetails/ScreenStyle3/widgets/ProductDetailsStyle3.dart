@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -45,16 +46,44 @@ class _ProductDetailsStyle3State extends State<ProductDetailsStyle3> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: AppSizeScreen.screenHeight / 3.5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(AppPadding.p8),
-                              child: Image.asset(
-                                widget.item.images![0],
-                                height: AppSizeScreen.screenHeight / 5,
-                                fit: BoxFit.contain,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                height: AppSizeScreen.screenHeight / 3.5,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(AppPadding.p8),
+                                  child: Image.asset(
+                                    widget.item.images![0],
+                                    width: AppSizeScreen.screenWidth / 2,
+                                    height: AppSizeScreen.screenHeight / 5,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: AppPadding.p20,
+                                    horizontal: AppPadding.p8),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.circular(AppSize.s20),
+                                    color: ColorManager.primary1Color),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Image.asset(AssetsManager.heartImage),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: AppPadding.p20),
+                                      child: Image.asset(
+                                          AssetsManager.moreSquareImage),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                           PriceProduct(item: widget.item),
                           Padding(

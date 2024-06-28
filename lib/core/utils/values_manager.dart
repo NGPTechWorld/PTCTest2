@@ -77,4 +77,5 @@ class AppSizeScreen {
 
 class AppSizeWidget {
   static const double cardSize = 150;
+  static const double tabSize = 40;
 }

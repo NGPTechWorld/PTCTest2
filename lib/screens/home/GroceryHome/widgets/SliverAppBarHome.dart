@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/models/CartItem.dart';
+import 'package:ptc2/models/LocationAddress.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/SearchBar.dart';
+import 'package:ptc2/widgets/CartIcon.dart';
 
 class SliverAppBarHome extends StatefulWidget {
   const SliverAppBarHome({super.key});
@@ -15,7 +19,29 @@ class SliverAppBarHome extends StatefulWidget {
 
 class _SliverAppBarHomeState extends State<SliverAppBarHome> {
   String? selectedValue;
-  final List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  String? selectedValue2;
+  final List<String> items = [
+    '1 ${StringManager.listDropDownText}',
+    '2 ${StringManager.listDropDownText}',
+    '3 ${StringManager.listDropDownText}',
+    '4 ${StringManager.listDropDownText}',
+    '5 ${StringManager.listDropDownText}'
+  ];
+  ValueNotifier<int> cartItemCount = ValueNotifier<int>(0);
+  @override
+  void initState() {
+    super.initState();
+
+    if (locations.isNotEmpty) {
+      selectedValue = locations.first.getLocation();
+    }
+  }
+
+  void addItemToCart(CartItem item) {
+    setState(() {
+      cart.add(item);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,27 +72,15 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
                     height: 30,
                   ),
                   Positioned(
-                    left: AppSize.s14,
+                    left: AppSize.s10,
                     bottom: AppSize.s20,
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                          color: ColorManager.secoundColor,
-                          borderRadius: BorderRadius.circular(12)),
-                      constraints: const BoxConstraints(
-                          minWidth: AppSize.s24, maxHeight: AppSize.s24),
-                      child: Center(
-                        child: Text(
-                          StringManager.numCartSilverAppBar,
-                          style: StyleManager.body02_Semibold(
-                              color: ColorManager.primary1Color),
-                        ),
-                      ),
+                    child: CartIcon(
+                      color: ColorManager.whiteColor,
                     ),
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -97,16 +111,16 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
                       child: DropdownButton<String>(
                         value: selectedValue,
                         hint: Text(
-                          'Select an item',
+                          StringManager.hintDropDownText,
                           style: TextStyle(color: ColorManager.primary1Color),
                         ),
                         dropdownColor: ColorManager.firstColor,
                         iconEnabledColor: ColorManager.primary1Color,
-                        items: items.map((String item) {
+                        items: locations.map((LocationAddress location) {
                           return DropdownMenuItem<String>(
-                            value: item,
+                            value: location.getLocation(),
                             child: Text(
-                              item,
+                              location.getLocation(),
                               style:
                                   TextStyle(color: ColorManager.primary1Color),
                             ),
@@ -130,7 +144,7 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
                           color: ColorManager.primary3Color)),
                   DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
-                      value: selectedValue,
+                      value: selectedValue2,
                       hint: Text(
                         'Select',
                         style: TextStyle(color: ColorManager.primary1Color),
@@ -148,7 +162,7 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
                       }).toList(),
                       onChanged: (String? newValue) {
                         setState(() {
-                          selectedValue = newValue;
+                          selectedValue2 = newValue;
                         });
                       },
                     ),

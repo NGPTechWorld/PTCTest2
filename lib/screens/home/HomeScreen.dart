@@ -3,7 +3,8 @@ import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/DiscountSlider.dart';
-import 'package:ptc2/screens/home/CategoryPage/CategoryScreen.dart';
+import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/CategoryScreen.dart';
+import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/CategoryScreenStyle2.dart';
 import 'package:ptc2/screens/home/GroceryHome/GroceryHomeScreen.dart';
 import 'package:ptc2/screens/home/widgets/BottomNavicationBar.dart';
 
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
     GroceryHomeScreen(),
     CategoryScreen(),
+    CategoryScreenStyle2()
   ];
   void setIndex(int index) {
     setState(() {
@@ -27,45 +29,56 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: indexPage,
-        children: _pages,
-      ),
-      bottomNavigationBar: CurvedNavigationBarCustom(
-        color: ColorManager.primary3Color,
-        backgroundColor: ColorManager.transparentColor,
-        buttonBackgroundColor: ColorManager.primary7Color,
-        onTap: (value) {
-          setState(() {
-            indexPage = value;
-          });
-        },
-        index: indexPage,
-        items: [
-          Image.asset(
-            AssetsManager.homeImage,
-            color: indexPage == 0
-                ? ColorManager.primary1Color
-                : ColorManager.primary7Color,
+      body: Stack(
+        children: [
+          IndexedStack(
+            index: indexPage,
+            children: _pages,
           ),
-          Image.asset(
-            AssetsManager.categoryImage,
-            color: indexPage == 1
-                ? ColorManager.primary1Color
-                : ColorManager.primary7Color,
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Align(
+                alignment: Alignment.bottomCenter,
+                child: CurvedNavigationBarCustom(
+                  color: ColorManager.ButtomBarColor,
+                  backgroundColor: ColorManager.transparentColor,
+                  buttonBackgroundColor: ColorManager.primary7Color,
+                  onTap: (value) {
+                    setState(() {
+                      indexPage = value;
+                    });
+                  },
+                  index: indexPage,
+                  items: [
+                    Image.asset(
+                      indexPage == 0
+                          ? AssetsManager.homeActiveImage
+                          : AssetsManager.homeImage,
+                      color: indexPage == 0 ? null : ColorManager.primary7Color,
+                    ),
+                    Image.asset(
+                      indexPage == 1
+                          ? AssetsManager.categoryActiveImage
+                          : AssetsManager.categoryImage,
+                      color: indexPage == 1 ? null : ColorManager.primary7Color,
+                    ),
+                    Image.asset(
+                      AssetsManager.heartImage,
+                      color: indexPage == 2
+                          ? ColorManager.primary1Color
+                          : ColorManager.primary7Color,
+                    ),
+                    Image.asset(
+                      AssetsManager.more_verticalImage,
+                      color: indexPage == 3
+                          ? ColorManager.primary1Color
+                          : ColorManager.primary7Color,
+                    )
+                  ],
+                )),
           ),
-          Image.asset(
-            AssetsManager.heartImage,
-            color: indexPage == 2
-                ? ColorManager.primary1Color
-                : ColorManager.primary7Color,
-          ),
-          Image.asset(
-            AssetsManager.more_verticalImage,
-            color: indexPage == 3
-                ? ColorManager.primary1Color
-                : ColorManager.primary7Color,
-          )
         ],
       ),
     );

@@ -19,7 +19,8 @@ class StringManager {
   static const card2_1Text = " HRS";
   static const card2_2Text = "Your time savings";
   static const someItemText = "Deals on Fruits & Tea";
-
+  static const hintDropDownText = "Select an item";
+  static const listDropDownText = "";
   //CategoryPage
   static const title1SilverAppBar2 = "Shop";
   static const title2SilverAppBa2 = "By Category";

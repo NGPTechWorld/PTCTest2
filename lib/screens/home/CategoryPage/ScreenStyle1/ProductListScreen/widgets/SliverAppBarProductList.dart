@@ -1,31 +1,31 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/models/Category.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/home/ProductDetails/widgets/RateingProductBar.dart';
 import 'package:ptc2/widgets/CartIcon.dart';
 
-class SilverAppBarProductDetailsStyle3 extends StatefulWidget {
-  final Item item;
-  const SilverAppBarProductDetailsStyle3({Key? key, required this.item})
+class SliverAppBarProductList extends StatefulWidget {
+  final CategoryItem categoryItem;
+  const SliverAppBarProductList({Key? key, required this.categoryItem})
       : super(key: key);
 
   @override
-  State<SilverAppBarProductDetailsStyle3> createState() =>
-      _SilverAppBarProductDetailsStyle3State();
+  State<SliverAppBarProductList> createState() =>
+      _SliverAppBarProductListState();
 }
 
-class _SilverAppBarProductDetailsStyle3State
-    extends State<SilverAppBarProductDetailsStyle3> {
+class _SliverAppBarProductListState extends State<SliverAppBarProductList> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
       floating: false,
-      expandedHeight: AppSizeScreen.screenHeight / 3,
       backgroundColor: ColorManager.whiteColor,
       stretch: true,
       leading: InkWell(
@@ -52,10 +52,22 @@ class _SilverAppBarProductDetailsStyle3State
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "",
-              style:
-                  StyleManager.h2_Semibold(color: ColorManager.primary1Color),
+            Container(
+              width: AppSizeScreen.screenWidth / 1.8,
+              child: Text(
+                widget.categoryItem.name,
+                style:
+                    StyleManager.body01_Regular(color: ColorManager.blackColor),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+              width: 40,
+              child: Image.asset(
+                AssetsManager.searchImage,
+                height: 30,
+                color: ColorManager.blackColor,
+              ),
             ),
             SizedBox(
               height: 50,
@@ -79,34 +91,6 @@ class _SilverAppBarProductDetailsStyle3State
               ),
             )
           ],
-        ),
-      ),
-      flexibleSpace: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(top: 80, left: 20, right: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  widget.item.category,
-                  style: StyleManager.h1_Regular(
-                      color: ColorManager.blackColor, fontsize: AppSize.s50),
-                ),
-              ),
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  widget.item.name,
-                  style: StyleManager.h1_Bold(
-                      color: ColorManager.blackColor, fontsize: AppSize.s50),
-                ),
-              ),
-              RateingProductBar(item: widget.item),
-            ],
-          ),
         ),
       ),
     );

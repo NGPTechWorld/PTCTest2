@@ -74,6 +74,11 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
                 child: SomeItem(),
               ),
             ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: AppSizeScreen.screenHeight / 7,
+              ),
+            ),
           ],
         ),
       ),

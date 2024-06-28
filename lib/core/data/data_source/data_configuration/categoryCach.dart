@@ -13,7 +13,7 @@ class CategoryCach {
 
   List<Item>? getItemforCategory(String category, String type) {
     int index = getIndexCategory(category);
-    if (index == -1) return null;
+    if (index == -1) return [];
     if (categoryscahe[index].items[type] == null) {
       fillItemList(type, index);
     }
@@ -34,6 +34,7 @@ class CategoryCach {
   void fillItemList(String type, int index) {
     switch (type) {
       case "low price":
+        categoryscahe[index].items[type] = [];
         categoryscahe[index]
             .items[type]!
             .addAll(categoryscahe[index].items["general"]!);
@@ -42,6 +43,7 @@ class CategoryCach {
             .sort((a, b) => a.price.compareTo(b.price));
         break;
       case "hight price":
+        categoryscahe[index].items[type] = [];
         categoryscahe[index]
             .items[type]!
             .addAll(categoryscahe[index].items["general"]!);
@@ -50,6 +52,7 @@ class CategoryCach {
             .sort((a, b) => b.price.compareTo(a.price));
         break;
       case "popular":
+        categoryscahe[index].items[type] = [];
         categoryscahe[index]
             .items[type]!
             .addAll(categoryscahe[index].items["general"]!);

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/models/CardMoney.dart';
+import 'package:ptc2/models/CartItem.dart';
+import 'package:ptc2/models/LocationAddress.dart';
 import 'package:ptc2/screens/home/ProductDetails/ScreenStyle1/ProductDetailsScreenStyle1.dart';
 
 class RecommendedList extends StatelessWidget {

@@ -4,7 +4,6 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
-import 'package:ptc2/screens/Home/CategoryPage/CategoryScreen.dart';
 import 'package:ptc2/screens/Home/HomeScreen.dart';
 
 class Onboardring extends StatefulWidget {
