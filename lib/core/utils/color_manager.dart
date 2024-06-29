@@ -24,4 +24,5 @@ class ColorManager {
   static Color container2Color = HexColor("#FFC3BB");
   static Color container3Color = HexColor("#F0FBC5");
   static Color ButtomBarColor = HexColor("#F8F7FB");
+  static Color greenColor = HexColor("#2b8a41");
 }

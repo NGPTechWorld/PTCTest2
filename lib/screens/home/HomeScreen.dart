@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/Home/GroceryHome/widgets/DiscountSlider.dart';
+import 'package:ptc2/screens/Orders/OredersScreen.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/CategoryScreen.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/CategoryScreenStyle2.dart';
 import 'package:ptc2/screens/home/GroceryHome/GroceryHomeScreen.dart';
@@ -16,10 +15,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int indexPage = 0;
-  final List<Widget> _pages = [
-    GroceryHomeScreen(),
-    CategoryScreen(),
-    CategoryScreenStyle2()
+  List<Widget> _pages = [
+    const GroceryHomeScreen(),
+    const CategoryScreen(),
+    const CategoryScreenStyle2(),
+    OredersScreen()
   ];
   void setIndex(int index) {
     setState(() {
@@ -46,6 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: ColorManager.transparentColor,
                   buttonBackgroundColor: ColorManager.primary7Color,
                   onTap: (value) {
+                    _pages = [
+                      const GroceryHomeScreen(),
+                      const CategoryScreen(),
+                      const CategoryScreenStyle2(),
+                      OredersScreen()
+                    ];
                     setState(() {
                       indexPage = value;
                     });

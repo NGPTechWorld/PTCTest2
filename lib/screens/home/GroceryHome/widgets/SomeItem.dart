@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/data/data_source/categoryItemData.dart';
+import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
+import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/home/ProductDetails/ScreenStyle2/ProductDetailsScreenStyle2.dart';
+import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 
 class SomeItem extends StatelessWidget {
   const SomeItem({super.key});
@@ -64,13 +67,20 @@ class SomeItem extends StatelessWidget {
                           child: Container(
                             height: AppSize.s24,
                             child: Center(
-                              child: CircleAvatar(
-                                radius: AppSize.s30,
-                                backgroundColor: ColorManager.firstColor,
-                                child: Icon(
-                                  Icons.add,
-                                  color: ColorManager.whiteColor,
-                                  size: AppSize.s16,
+                              child: InkWell(
+                                onTap: () {
+                                  myCart.addItemToCart(itemsApp[index]);
+                                  ScaffoldMessengerApp.showSnackbar(
+                                      context, StringManager.addItemCartText);
+                                },
+                                child: CircleAvatar(
+                                  radius: AppSize.s30,
+                                  backgroundColor: ColorManager.firstColor,
+                                  child: Icon(
+                                    Icons.add,
+                                    color: ColorManager.whiteColor,
+                                    size: AppSize.s16,
+                                  ),
                                 ),
                               ),
                             ),

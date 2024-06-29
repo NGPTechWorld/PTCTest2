@@ -20,15 +20,44 @@ class StringManager {
   static const card2_2Text = "Your time savings";
   static const someItemText = "Deals on Fruits & Tea";
   static const hintDropDownText = "Select an item";
-  static const listDropDownText = "";
+  static const listDropDownText = "Hour";
   //CategoryPage
   static const title1SilverAppBar2 = "Shop";
   static const title2SilverAppBa2 = "By Category";
-
+  //ShoppingPage
+  static const shoppingCartText = "Shopping Cart";
+  static const buttonShoppingText = "Proceed  To checkout";
+  static const subTotalText = "Subtotal";
+  static const deliveryText = "Delivery";
+  static const totalText = "Total";
+  //CheckoutPage
+  static const deliveryAddressText = "Delivery Address";
+  static const addNewAddressText = "Add New Address";
+  static const buttonAddCardText = "Add Card";
+  //AddCardPage
+  static const titleBarAddCardText = "Add Card";
+  static const makePaymentText = "Make Payment";
+  static const cardholdernameText = "Card holder name";
+  static const cardNumberText = "Card Number";
+  static const expDateText = "Exp Date";
+  static const cvcText = "CVC";
+  //OrdersPage
+  static const titleBarOrderText = "Orders";
+  static const currentText = "Current";
+  static const pastText = "Past";
+  static const meetOurRiderText = "Meet our rider,";
+  //TrackOrderPage
+  static const titleBarTrackOrderText = "Track Order";
   //Product Details
   static const reviewsText = "Reviews";
   static const detailsText = "Details";
   static const nutritionalFactsText = "Nutritional facts";
   static const addtocartText = "Add To Cart";
   static const buyNowText = "Buy Now";
+  //ScaffoldMessengerApp
+  static const addItemCartText = "Item added to cart";
+
+  //global
+  static const editText = "Edit";
+  static const successText = "Success";
 }

@@ -43,6 +43,13 @@ class Item {
     return "$discount%";
   }
 
+  double get_finalPrice() {
+    if (isDiscount)
+      return price - (price * (discount / 100));
+    else
+      return price;
+  }
+
   @override
   String toString() {
     return 'Item(id: $id, name: $name, category: $category, details: $details, quantity: $quantity, price: ${get_price()}, isDiscount: $isDiscount, discount: ${get_discount()}, numReviews: $numReviews, rate: $rate, images: $images)';

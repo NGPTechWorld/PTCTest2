@@ -17,7 +17,6 @@ class GroceryHomeScreen extends StatefulWidget {
 }
 
 class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
-  final List<String> itemsApp1 = List<String>.generate(20, (i) => "Item $i");
   @override
   Widget build(BuildContext context) {
     return Scaffold(

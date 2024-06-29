@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
+import 'package:ptc2/screens/ShoppingCart/ShoppingCartScreen.dart';
+import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 
 class ButtonProduct extends StatelessWidget {
   final Item item;
@@ -15,7 +18,11 @@ class ButtonProduct extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MaterialButton(
-          onPressed: () {},
+          onPressed: () {
+            myCart.addItemToCart(item);
+            ScaffoldMessengerApp.showSnackbar(
+                context, StringManager.addItemCartText);
+          },
           height: AppSizeScreen.screenHeight / 14,
           minWidth: AppSizeScreen.screenWidth / 2.8,
           elevation: 0,
@@ -32,7 +39,13 @@ class ButtonProduct extends StatelessWidget {
           padding: const EdgeInsets.only(left: AppPadding.p10),
           child: MaterialButton(
             color: ColorManager.firstColor,
-            onPressed: () {},
+            onPressed: () {
+              myCart.addItemToCart(item);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ShoppingCartScreen()));
+            },
             height: AppSizeScreen.screenHeight / 14,
             minWidth: AppSizeScreen.screenWidth / 2.4,
             elevation: 0,

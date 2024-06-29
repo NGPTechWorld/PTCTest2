@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/const/const.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';

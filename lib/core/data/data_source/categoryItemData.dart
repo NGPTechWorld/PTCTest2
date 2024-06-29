@@ -1,7 +1,6 @@
 import 'package:ptc2/core/data/data_source/data_configuration/categoryCach.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/models/Category.dart';
-import 'package:ptc2/models/item.dart';
 
 String path = "lib/core/data/data_source/images";
 List<CategoryItem> categorys = [

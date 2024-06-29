@@ -18,7 +18,7 @@ class SliverAppBarHome extends StatefulWidget {
 }
 
 class _SliverAppBarHomeState extends State<SliverAppBarHome> {
-  String? selectedValue;
+  String? selectedValue = myLocation.getLocation();
   String? selectedValue2;
   final List<String> items = [
     '1 ${StringManager.listDropDownText}',
@@ -31,10 +31,6 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
   @override
   void initState() {
     super.initState();
-
-    if (locations.isNotEmpty) {
-      selectedValue = locations.first.getLocation();
-    }
   }
 
   void addItemToCart(CartItem item) {
