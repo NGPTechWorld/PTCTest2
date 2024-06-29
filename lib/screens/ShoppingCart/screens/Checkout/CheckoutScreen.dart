@@ -25,6 +25,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         child: CustomScrollView(
           slivers: [
             SilverAppBarDefault(
+                isBack: true,
                 isDiscont: false,
                 titleBar: StringManager.shoppingCartText +
                     " (${myCart.items.length})"),

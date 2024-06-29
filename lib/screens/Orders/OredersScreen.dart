@@ -28,7 +28,10 @@ class _OredersScreenState extends State<OredersScreen> {
         child: CustomScrollView(
           slivers: [
             SilverAppBarDefault(
-                isDiscont: false, titleBar: StringManager.titleBarOrderText),
+              isDiscont: false,
+              titleBar: StringManager.titleBarOrderText,
+              isBack: false,
+            ),
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -113,121 +116,149 @@ class _OredersScreenState extends State<OredersScreen> {
                 padding: const EdgeInsets.symmetric(vertical: AppPadding.p18),
                 child: ListView.builder(
                   shrinkWrap: true,
+                  itemCount: myOrders.length,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    List<Item> keys = myCart.items.keys.toList();
-                    List<int> values = myCart.items.values.toList();
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: AppPadding.p16),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: AppPadding.p16),
-                                child: Image.asset(
-                                  AssetsManager.imageiconImage,
-                                  width: AppSize.s50,
-                                  height: AppSize.s50,
-                                  fit: BoxFit.contain,
-                                  color: ColorManager.primary6Color,
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    keys[index].name,
-                                    style: StyleManager.body02_Medium(
-                                        color: ColorManager.blackColor),
+                    if ((indexCurrent == 0 &&
+                            myOrders[index].isSuccess == false) ||
+                        (indexCurrent == 1 &&
+                            myOrders[index].isSuccess == true)) {
+                      return Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: AppPadding.p16),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: AppPadding.p16),
+                                  child: Image.asset(
+                                    AssetsManager.imageiconImage,
+                                    width: AppSize.s50,
+                                    height: AppSize.s50,
+                                    fit: BoxFit.contain,
+                                    color: ColorManager.primary6Color,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: AppPadding.p4),
-                                    child: Text(
-                                      '\$' +
-                                          keys[index]
-                                              .get_finalPrice()
-                                              .toStringAsFixed(2),
-                                      style: StyleManager.body02_Regular(
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Order ${index + 1}',
+                                      style: StyleManager.body02_Medium(
                                           color: ColorManager.blackColor),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: AppPadding.p20,
-                                    ),
-                                    child: Text(
-                                      myCart.get_dateOrder(),
-                                      style: StyleManager.body02_Regular(
-                                          color: ColorManager.primary5Color),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Spacer(),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.all(AppPadding.p16),
-                                    child: Column(
-                                      children: [
-                                        RichText(
-                                          text: TextSpan(
-                                            children: [
-                                              TextSpan(
-                                                text: 'ID: ',
-                                                style:
-                                                    StyleManager.body02_Regular(
-                                                        color: ColorManager
-                                                            .primary5Color),
-                                              ),
-                                              TextSpan(
-                                                text: '#${myCart.id}',
-                                                style:
-                                                    StyleManager.body02_Regular(
-                                                        color: ColorManager
-                                                            .blackColor),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: AppPadding.p10,
-                                        vertical: AppPadding.p2),
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(AppSize.s6),
-                                        color: ColorManager.firstColor
-                                            .withAlpha(40)),
-                                    child: Center(
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: AppPadding.p4),
                                       child: Text(
-                                        StringManager.successText,
-                                        style: StyleManager.label_Medium(
-                                            color: ColorManager.firstColor),
+                                        '\$' +
+                                            myOrders[index]
+                                                .totalPrice
+                                                .toStringAsFixed(2),
+                                        style: StyleManager.body02_Regular(
+                                            color: ColorManager.blackColor),
                                       ),
                                     ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          Divider(
-                            color: ColorManager.primary3Color,
-                            thickness: 1,
-                          ),
-                        ],
-                      ),
-                    );
+                                    indexCurrent == 1
+                                        ? Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              vertical: AppPadding.p20,
+                                            ),
+                                            child: Text(
+                                              myCart.get_dateOrder(),
+                                              style:
+                                                  StyleManager.body02_Regular(
+                                                      color: ColorManager
+                                                          .primary5Color),
+                                            ),
+                                          )
+                                        : Container(),
+                                  ],
+                                ),
+                                Spacer(),
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.all(AppPadding.p16),
+                                      child: Column(
+                                        children: [
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: 'ID: ',
+                                                  style: StyleManager
+                                                      .body02_Regular(
+                                                          color: ColorManager
+                                                              .primary5Color),
+                                                ),
+                                                TextSpan(
+                                                  text: '#${myCart.id}',
+                                                  style: StyleManager
+                                                      .body02_Regular(
+                                                          color: ColorManager
+                                                              .blackColor),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    indexCurrent == 1
+                                        ? Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: AppPadding.p10,
+                                                vertical: AppPadding.p2),
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        AppSize.s6),
+                                                color: ColorManager.firstColor
+                                                    .withAlpha(40)),
+                                            child: Center(
+                                              child: Text(
+                                                StringManager.successText,
+                                                style:
+                                                    StyleManager.label_Medium(
+                                                        color: ColorManager
+                                                            .firstColor),
+                                              ),
+                                            ),
+                                          )
+                                        : Container(),
+                                  ],
+                                )
+                              ],
+                            ),
+                            indexCurrent == 1
+                                ? Container()
+                                : Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(
+                                            AppPadding.p10),
+                                        child: Container(
+                                          child: Image.asset(
+                                              AssetsManager.orderImage),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                            Divider(
+                              color: ColorManager.primary3Color,
+                              thickness: 1,
+                            ),
+                          ],
+                        ),
+                      );
+                    }
                   },
-                  itemCount: myCart.items.length,
                 ),
               ),
             )

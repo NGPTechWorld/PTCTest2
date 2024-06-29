@@ -8,10 +8,14 @@ import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/widgets/CartIcon.dart';
 
 class SilverAppBarDefault extends StatefulWidget {
+  final bool isBack;
   final bool isDiscont;
   final String titleBar;
   const SilverAppBarDefault(
-      {super.key, required this.isDiscont, required this.titleBar});
+      {super.key,
+      required this.isDiscont,
+      required this.titleBar,
+      required this.isBack});
 
   @override
   State<SilverAppBarDefault> createState() => _SilverAppBarDefaultState();
@@ -27,25 +31,27 @@ class _SilverAppBarDefaultState extends State<SilverAppBarDefault> {
       backgroundColor: widget.isDiscont
           ? ColorManager.secoundColor
           : ColorManager.whiteColor,
-      leading: InkWell(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: AppPadding.p8),
-          child: Center(
-            child: CircleAvatar(
-              radius: AppSize.s30,
-              backgroundColor: ColorManager.primary1Color,
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                color: ColorManager.blackColor,
-                size: AppSize.s10,
+      leading: widget.isBack
+          ? InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: AppPadding.p8),
+                child: Center(
+                  child: CircleAvatar(
+                    radius: AppSize.s30,
+                    backgroundColor: ColorManager.primary1Color,
+                    child: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: ColorManager.blackColor,
+                      size: AppSize.s10,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
-      ),
+            )
+          : Container(),
       title: Text(
         widget.titleBar,
         style: StyleManager.body01_Regular(color: ColorManager.blackColor),

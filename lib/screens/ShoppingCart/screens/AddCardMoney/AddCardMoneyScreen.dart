@@ -5,6 +5,7 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/models/CartItem.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/ShoppingCart/screens/Checkout/CheckoutScreen.dart';
 import 'package:ptc2/widgets/SilverAppBarDefault.dart';
@@ -25,6 +26,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
         child: CustomScrollView(
           slivers: [
             SilverAppBarDefault(
+              isBack: true,
               isDiscont: false,
               titleBar: StringManager.titleBarAddCardText,
             ),
@@ -218,10 +220,14 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
               child: MaterialButton(
                 color: ColorManager.firstColor,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CheckoutScreen()));
+                  myOrders.add(myCart);
+                  myCart = CartItem(
+                      items: {},
+                      delivery: myLocation,
+                      cardMoney: cardsMoney[0],
+                      isSuccess: false,
+                      dateOrdered: DateTime.now());
+                  Navigator.popUntil(context, (route) => route.isFirst);
                 },
                 height: AppSizeScreen.screenHeight / 14,
                 minWidth: AppSizeScreen.screenWidth,

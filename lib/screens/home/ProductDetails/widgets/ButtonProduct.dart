@@ -20,8 +20,8 @@ class ButtonProduct extends StatelessWidget {
         MaterialButton(
           onPressed: () {
             myCart.addItemToCart(item);
-            ScaffoldMessengerApp.showSnackbar(
-                context, StringManager.addItemCartText);
+            ScaffoldMessengerApp.showSnackbar(context,
+                StringManager.addItemCartText, ColorManager.greenColor);
           },
           height: AppSizeScreen.screenHeight / 14,
           minWidth: AppSizeScreen.screenWidth / 2.8,

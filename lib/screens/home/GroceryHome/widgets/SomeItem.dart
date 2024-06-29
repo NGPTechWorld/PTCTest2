@@ -71,7 +71,9 @@ class SomeItem extends StatelessWidget {
                                 onTap: () {
                                   myCart.addItemToCart(itemsApp[index]);
                                   ScaffoldMessengerApp.showSnackbar(
-                                      context, StringManager.addItemCartText);
+                                      context,
+                                      StringManager.addItemCartText,
+                                      ColorManager.greenColor);
                                 },
                                 child: CircleAvatar(
                                   radius: AppSize.s30,

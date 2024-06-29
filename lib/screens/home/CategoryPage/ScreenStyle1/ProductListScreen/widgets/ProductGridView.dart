@@ -69,7 +69,9 @@ class _ProductGridViewState extends State<ProductGridView> {
                                 onTap: () {
                                   myCart.addItemToCart(widget.items[index]);
                                   ScaffoldMessengerApp.showSnackbar(
-                                      context, StringManager.addItemCartText);
+                                      context,
+                                      StringManager.addItemCartText,
+                                      ColorManager.greenColor);
                                 },
                                 child: CircleAvatar(
                                   radius: AppSize.s30,

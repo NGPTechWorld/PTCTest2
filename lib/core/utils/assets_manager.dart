@@ -14,4 +14,5 @@ class AssetsManager {
   static const more_verticalImage = "$imagesPath/more_vertical.png";
   static const moreSquareImage = "$imagesPath/moreSquare.png";
   static const shoppingDiscontImage = "$imagesPath/shoppingDiscont.png";
+  static const orderImage = "$imagesPath/order.png";
 }

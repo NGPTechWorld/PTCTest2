@@ -56,6 +56,7 @@ class StringManager {
   static const buyNowText = "Buy Now";
   //ScaffoldMessengerApp
   static const addItemCartText = "Item added to cart";
+  static const faildText = "Faild!";
 
   //global
   static const editText = "Edit";

@@ -6,6 +6,7 @@ import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/ShoppingCart/screens/Checkout/CheckoutScreen.dart';
+import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 import 'package:ptc2/widgets/SilverAppBarDefault.dart';
 
 class ShoppingCartScreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
         child: CustomScrollView(
           slivers: [
             SilverAppBarDefault(
+              isBack: true,
               isDiscont: false,
               titleBar:
                   StringManager.shoppingCartText + " (${myCart.items.length})",
@@ -222,10 +224,15 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
               child: MaterialButton(
                 color: ColorManager.firstColor,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CheckoutScreen()));
+                  if (myCart.items.isNotEmpty) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CheckoutScreen()));
+                  } else {
+                    ScaffoldMessengerApp.showSnackbarError(context,
+                        StringManager.faildText, ColorManager.secoundDarkColor);
+                  }
                 },
                 height: AppSizeScreen.screenHeight / 14,
                 minWidth: AppSizeScreen.screenWidth,

@@ -8,13 +8,13 @@ class CartItem {
   double subTotalPrice, totalPrice, deliveryPrice;
   Map<Item, int> items;
   LocationAddress delivery;
-  CardMoney cardMoney;
+  CardMoney? cardMoney;
   bool isSuccess;
   DateTime dateOrdered;
   CartItem({
     required this.items,
     required this.delivery,
-    required this.cardMoney,
+    this.cardMoney,
     required this.isSuccess,
     required this.dateOrdered,
   })  : id = ++cntId,
