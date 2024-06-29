@@ -5,7 +5,6 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/models/CartItem.dart';
 import 'package:ptc2/models/LocationAddress.dart';
 import 'package:ptc2/screens/Home/GroceryHome/widgets/SearchBar.dart';
 import 'package:ptc2/widgets/CartIcon.dart';
@@ -31,12 +30,6 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
   @override
   void initState() {
     super.initState();
-  }
-
-  void addItemToCart(CartItem item) {
-    setState(() {
-      cart.add(item);
-    });
   }
 
   @override

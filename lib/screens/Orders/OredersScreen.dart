@@ -120,8 +120,10 @@ class _OredersScreenState extends State<OredersScreen> {
                     return Padding(
                       padding: EdgeInsets.symmetric(horizontal: AppPadding.p16),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(right: AppPadding.p16),
@@ -130,9 +132,11 @@ class _OredersScreenState extends State<OredersScreen> {
                                   width: AppSize.s50,
                                   height: AppSize.s50,
                                   fit: BoxFit.contain,
+                                  color: ColorManager.primary6Color,
                                 ),
                               ),
                               Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     keys[index].name,
@@ -151,10 +155,15 @@ class _OredersScreenState extends State<OredersScreen> {
                                           color: ColorManager.blackColor),
                                     ),
                                   ),
-                                  Text(
-                                    myCart.get_dateOrder(),
-                                    style: StyleManager.body02_Regular(
-                                        color: ColorManager.blackColor),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: AppPadding.p20,
+                                    ),
+                                    child: Text(
+                                      myCart.get_dateOrder(),
+                                      style: StyleManager.body02_Regular(
+                                          color: ColorManager.primary5Color),
+                                    ),
                                   ),
                                 ],
                               ),
