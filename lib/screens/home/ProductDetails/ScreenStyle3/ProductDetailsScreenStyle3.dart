@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/models/item.dart';
-import 'package:ptc2/screens/home/ProductDetails/ScreenStyle2/widgets/ProductDetailsStyle2.dart';
-import 'package:ptc2/screens/home/ProductDetails/ScreenStyle2/widgets/SilverAppBarProductDetailsStyle2.dart';
 import 'package:ptc2/screens/home/ProductDetails/ScreenStyle3/widgets/ProductDetailsStyle3.dart';
 import 'package:ptc2/screens/home/ProductDetails/ScreenStyle3/widgets/SilverAppBarProductDetailsStyle3.dart';
 

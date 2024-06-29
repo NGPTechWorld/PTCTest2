@@ -41,14 +41,11 @@ class _SilverAppBarProductDetailsStyle1State
       ),
       title: Padding(
         padding: const EdgeInsets.only(top: AppPadding.p10),
-        child: Container(
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              widget.item.name,
-              style:
-                  StyleManager.body01_Regular(color: ColorManager.blackColor),
-            ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            widget.item.name,
+            style: StyleManager.body01_Regular(color: ColorManager.blackColor),
           ),
         ),
       ),

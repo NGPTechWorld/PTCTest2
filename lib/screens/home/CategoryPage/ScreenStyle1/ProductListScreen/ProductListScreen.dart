@@ -4,7 +4,6 @@ import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/Category.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/ProductListScreen/widgets/ProductTabBar.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/ProductListScreen/widgets/SliverAppBarProductList.dart';
-import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/widgets/CategorysTabBar.dart';
 
 class ProductListScreen extends StatefulWidget {
   final CategoryItem categoryItem;
@@ -27,7 +26,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(AppPadding.p10),
+              padding: const EdgeInsets.all(AppPadding.p10),
               child: ProductTabBar(
                 categoryItem: widget.categoryItem,
               ),

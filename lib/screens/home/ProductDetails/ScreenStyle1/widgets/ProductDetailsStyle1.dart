@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
@@ -52,7 +50,7 @@ class _ProductDetailsStyle1State extends State<ProductDetailsStyle1> {
                         color: ColorManager.primary1Color,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(AppPadding.p20),
+                        padding: const EdgeInsets.all(AppPadding.p20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -64,7 +62,7 @@ class _ProductDetailsStyle1State extends State<ProductDetailsStyle1> {
                             PriceProduct(item: widget.item),
                             RateingProductBar(item: widget.item),
                             TextPanelDetails(item: widget.item),
-                            SizedBox(height: 200),
+                            const SizedBox(height: 200),
                           ],
                         ),
                       ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
+import 'package:ptc2/widgets/CartIcon.dart';
 
 class SliverAppBarCategory extends StatefulWidget {
   const SliverAppBarCategory({super.key});
@@ -34,44 +34,13 @@ class _SliverAppBarCategoryState extends State<SliverAppBarCategory> {
               style:
                   StyleManager.h2_Semibold(color: ColorManager.primary1Color),
             ),
-            SizedBox(
-              height: 50,
-              width: 40,
-              child: Stack(
-                alignment: Alignment.centerLeft,
-                children: [
-                  Image.asset(
-                    AssetsManager.cartImage,
-                    height: 30,
-                  ),
-                  Positioned(
-                    left: AppSize.s14,
-                    bottom: AppSize.s20,
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                          color: ColorManager.secoundColor,
-                          borderRadius: BorderRadius.circular(12)),
-                      constraints: const BoxConstraints(
-                          minWidth: AppSize.s24, maxHeight: AppSize.s24),
-                      child: Center(
-                        child: Text(
-                          StringManager.numCartSilverAppBar,
-                          style: StyleManager.body02_Semibold(
-                              color: ColorManager.primary1Color),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )
+            CartIcon(color: ColorManager.whiteColor)
           ],
         ),
       ),
       flexibleSpace: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 80, left: 20, right: 20),
+          padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,

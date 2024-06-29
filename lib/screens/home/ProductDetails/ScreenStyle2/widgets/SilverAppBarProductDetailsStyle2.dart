@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
 
@@ -29,7 +28,7 @@ class _SilverAppBarProductDetailsStyle2State
           Navigator.pop(context);
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: AppPadding.p8),
+          padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),
           child: Center(
             child: CircleAvatar(
               radius: AppSize.s30,
@@ -45,7 +44,7 @@ class _SilverAppBarProductDetailsStyle2State
       ),
       title: Container(),
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(),
       ),
       flexibleSpace: Center(

@@ -5,9 +5,6 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/models/CardMoney.dart';
-import 'package:ptc2/models/CartItem.dart';
-import 'package:ptc2/models/LocationAddress.dart';
 import 'package:ptc2/screens/home/ProductDetails/ScreenStyle1/ProductDetailsScreenStyle1.dart';
 import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 
@@ -81,7 +78,7 @@ class RecommendedList extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(AppPadding.p8),
                     child: Stack(
@@ -113,7 +110,7 @@ class RecommendedList extends StatelessWidget {
                                         color: ColorManager.primary4Color),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: AppSize.s4,
                                 ),
                                 FittedBox(
@@ -131,7 +128,7 @@ class RecommendedList extends StatelessWidget {
                         Positioned(
                           top: 0,
                           right: -15,
-                          child: Container(
+                          child: SizedBox(
                             height: AppSize.s24,
                             child: Center(
                               child: InkWell(

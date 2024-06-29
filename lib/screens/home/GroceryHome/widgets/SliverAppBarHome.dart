@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
-import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -50,25 +49,8 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
               style:
                   StyleManager.h2_Semibold(color: ColorManager.primary1Color),
             ),
-            SizedBox(
-              height: 50,
-              width: 40,
-              child: Stack(
-                alignment: Alignment.centerLeft,
-                children: [
-                  Image.asset(
-                    AssetsManager.cartImage,
-                    height: 30,
-                  ),
-                  Positioned(
-                    left: AppSize.s10,
-                    bottom: AppSize.s20,
-                    child: CartIcon(
-                      color: ColorManager.whiteColor,
-                    ),
-                  ),
-                ],
-              ),
+            CartIcon(
+              color: ColorManager.whiteColor,
             ),
           ],
         ),
@@ -84,7 +66,7 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(50),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: AppPadding.p10),
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
           color: ColorManager.firstColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -135,7 +117,7 @@ class _SliverAppBarHomeState extends State<SliverAppBarHome> {
                     child: DropdownButton<String>(
                       value: selectedValue2,
                       hint: Text(
-                        'Select',
+                        StringManager.selectText,
                         style: TextStyle(color: ColorManager.primary1Color),
                       ),
                       dropdownColor: ColorManager.firstColor,

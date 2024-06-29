@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/screens/Home/CategoryPage/widgets/SliverAppBarCategory.dart';
-import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/widgets/CategorysGridView.dart';
-import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/widgets/CategorysGridView2.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/widgets/CategorysTabBar.dart';
 
 class CategoryScreenStyle2 extends StatefulWidget {
@@ -20,8 +18,8 @@ class _CategoryScreenStyle2State extends State<CategoryScreenStyle2> {
       backgroundColor: ColorManager.whiteColor,
       body: CustomScrollView(
         slivers: [
-          SliverAppBarCategory(),
-          SliverToBoxAdapter(
+          const SliverAppBarCategory(),
+          const SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.all(AppPadding.p10),
               child: CategorysTabBar(),

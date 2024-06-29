@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/data/data_source/categoryItemData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
@@ -88,6 +86,20 @@ class _CategorysGridView2State extends State<CategorysGridView2> {
                               ),
                             ),
                           ),
+                          const Spacer(),
+                          RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                                text:
+                                    '\$${widget.category.items['general']![index].get_finalPrice().toStringAsFixed(2)}',
+                                style: StyleManager.body01_Semibold(
+                                    color: ColorManager.firstDarkColor)),
+                            TextSpan(
+                                text:
+                                    '/${widget.category.items['general']![index].quantity}',
+                                style: StyleManager.body01_Medium(
+                                    color: ColorManager.firstDarkColor))
+                          ])),
                         ],
                       ),
                     ),

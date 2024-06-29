@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/models/CartItem.dart';
-import 'package:ptc2/models/Category.dart';
 import 'package:ptc2/models/LocationAddress.dart';
 import 'package:ptc2/models/CardMoney.dart';
 
@@ -15,10 +13,20 @@ List<CartItem> myOrders = [
   CartItem(
       dateOrdered: DateTime.now(),
       items: {},
-      delivery: LocationAddress(
-          name: "name", street: "street", city: "city", details: "details"),
-      isSuccess: true)
+      delivery: myLocation,
+      isSuccess: false),
+  CartItem(
+      dateOrdered: DateTime.now(),
+      items: {},
+      delivery: myLocation,
+      isSuccess: true),
+  CartItem(
+      dateOrdered: DateTime.now(),
+      items: {},
+      delivery: myLocation,
+      isSuccess: true),
 ];
+
 LocationAddress myLocation = locations[0];
 
 void addItemToCart(CartItem item) {

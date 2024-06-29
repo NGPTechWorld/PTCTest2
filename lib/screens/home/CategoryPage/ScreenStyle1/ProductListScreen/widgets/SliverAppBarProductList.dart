@@ -2,12 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/Category.dart';
-import 'package:ptc2/models/item.dart';
-import 'package:ptc2/screens/home/ProductDetails/widgets/RateingProductBar.dart';
 import 'package:ptc2/widgets/CartIcon.dart';
 
 class SliverAppBarProductList extends StatefulWidget {
@@ -33,7 +30,7 @@ class _SliverAppBarProductListState extends State<SliverAppBarProductList> {
           Navigator.pop(context);
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: AppPadding.p8),
+          padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),
           child: Center(
             child: CircleAvatar(
               radius: AppSize.s30,
@@ -52,7 +49,7 @@ class _SliverAppBarProductListState extends State<SliverAppBarProductList> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
+            SizedBox(
               width: AppSizeScreen.screenWidth / 1.8,
               child: Text(
                 widget.categoryItem.name,
@@ -69,27 +66,9 @@ class _SliverAppBarProductListState extends State<SliverAppBarProductList> {
                 color: ColorManager.blackColor,
               ),
             ),
-            SizedBox(
-              height: 50,
-              width: 40,
-              child: Stack(
-                alignment: Alignment.centerLeft,
-                children: [
-                  Image.asset(
-                    AssetsManager.cartImage,
-                    height: 30,
-                    color: ColorManager.blackColor,
-                  ),
-                  Positioned(
-                    left: AppSize.s14,
-                    bottom: AppSize.s20,
-                    child: CartIcon(
-                      color: ColorManager.blackColor,
-                    ),
-                  ),
-                ],
-              ),
-            )
+            CartIcon(
+              color: ColorManager.blackColor,
+            ),
           ],
         ),
       ),

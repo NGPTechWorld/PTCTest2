@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/string_manager.dart';
-import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/home/ProductDetails/widgets/ButtonProduct.dart';
 import 'package:ptc2/screens/home/ProductDetails/widgets/PriceProduct.dart';
-import 'package:ptc2/screens/home/ProductDetails/widgets/RateingProductBar.dart';
 import 'package:ptc2/screens/home/ProductDetails/widgets/TextPanelDetails.dart';
 
 class ProductDetailsStyle3 extends StatefulWidget {
@@ -27,7 +23,7 @@ class _ProductDetailsStyle3State extends State<ProductDetailsStyle3> {
       body: Container(
         color: ColorManager.whiteColor,
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           child: Container(
             color: ColorManager.whiteColor,
             child: Column(
@@ -41,7 +37,7 @@ class _ProductDetailsStyle3State extends State<ProductDetailsStyle3> {
                     width: double.infinity,
                     color: ColorManager.whiteColor,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: AppPadding.p20, vertical: AppPadding.p30),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +58,7 @@ class _ProductDetailsStyle3State extends State<ProductDetailsStyle3> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     vertical: AppPadding.p20,
                                     horizontal: AppPadding.p8),
                                 decoration: BoxDecoration(
@@ -94,7 +90,7 @@ class _ProductDetailsStyle3State extends State<ProductDetailsStyle3> {
                                 child: ButtonProduct(item: widget.item)),
                           ),
                           TextPanelDetails(item: widget.item),
-                          SizedBox(height: AppSize.s20),
+                          const SizedBox(height: AppSize.s20),
                         ],
                       ),
                     ),

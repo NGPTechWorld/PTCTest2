@@ -26,14 +26,14 @@ class _OnboardringState extends State<Onboardring> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(top: AppMargin.m24),
+              margin: const EdgeInsets.only(top: AppMargin.m24),
               child: Text(
                 StringManager.title,
                 style: StyleManager.h1_Bold(color: ColorManager.primary1Color),
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: AppMargin.m24),
+              margin: const EdgeInsets.symmetric(vertical: AppMargin.m24),
               child: Text(
                 StringManager.decription,
                 style:
@@ -45,7 +45,7 @@ class _OnboardringState extends State<Onboardring> {
               height: AppSizeScreen.screenHeight / 7,
             ),
             Container(
-              margin: EdgeInsets.only(top: AppMargin.m10),
+              margin: const EdgeInsets.only(top: AppMargin.m10),
               alignment: Alignment.center,
               child: Image.asset(AssetsManager.imageiconImage),
             ),
@@ -53,14 +53,16 @@ class _OnboardringState extends State<Onboardring> {
               height: AppSizeScreen.screenHeight / 8,
             ),
             Center(
-              child: Container(
+              child: SizedBox(
                 width: AppSizeScreen.screenHeight / 1.5,
                 height: AppSizeScreen.screenHeight / 12,
                 child: TextButton(
                     style: StyleManager.buttonStyle(),
                     onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => HomeScreen()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const HomeScreen()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(

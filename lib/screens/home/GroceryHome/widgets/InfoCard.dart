@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/models/Category.dart';
-import 'package:ptc2/models/item.dart';
-import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -50,7 +47,7 @@ class _InfoCardState extends State<InfoCard> {
                           ),
                         ),
                         TextSpan(
-                          text: "\n" + StringManager.card1_2Text,
+                          text: "\n${StringManager.card1_2Text}",
                           style: StyleManager.body02_Medium(
                             color: ColorManager.blackColor,
                           ),
@@ -93,7 +90,7 @@ class _InfoCardState extends State<InfoCard> {
                           ),
                         ),
                         TextSpan(
-                          text: "\n" + StringManager.card2_2Text,
+                          text: "\n${StringManager.card2_2Text}",
                           style: StyleManager.body02_Medium(
                             color: ColorManager.blackColor,
                           ),

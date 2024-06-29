@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/onboardring/OnBoardring.dart';
+import 'package:ptc2/screens/OnBoardring/OnBoardring.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     AppSizeScreen.screenHeight = AppSizeScreen.screenSize.height;
     return MaterialApp(
       color: ColorManager.firstDarkColor,
-      home: Onboardring(),
+      home: const Onboardring(),
     );
   }
 }

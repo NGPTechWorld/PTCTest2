@@ -5,8 +5,6 @@ import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/models/item.dart';
-import 'package:ptc2/screens/ShoppingCart/screens/AddCardMoney/AddCardMoneyScreen.dart';
 import 'package:ptc2/widgets/SilverAppBarDefault.dart';
 
 class OredersScreen extends StatefulWidget {
@@ -18,7 +16,14 @@ class OredersScreen extends StatefulWidget {
 
 class _OredersScreenState extends State<OredersScreen> {
   List<String> barTitle = [StringManager.currentText, StringManager.pastText];
-  int indexCurrent = 0;
+  int? indexCurrent;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    indexCurrent = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,7 @@ class _OredersScreenState extends State<OredersScreen> {
         color: ColorManager.whiteColor,
         child: CustomScrollView(
           slivers: [
-            SilverAppBarDefault(
+            const SilverAppBarDefault(
               isDiscont: false,
               titleBar: StringManager.titleBarOrderText,
               isBack: false,
@@ -71,7 +76,7 @@ class _OredersScreenState extends State<OredersScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: AppSize.s10,
                     ),
                     InkWell(
@@ -117,15 +122,15 @@ class _OredersScreenState extends State<OredersScreen> {
                 child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: myOrders.length,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     if ((indexCurrent == 0 &&
                             myOrders[index].isSuccess == false) ||
                         (indexCurrent == 1 &&
                             myOrders[index].isSuccess == true)) {
                       return Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: AppPadding.p16),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: AppPadding.p16),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -133,8 +138,8 @@ class _OredersScreenState extends State<OredersScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                      EdgeInsets.only(right: AppPadding.p16),
+                                  padding: const EdgeInsets.only(
+                                      right: AppPadding.p16),
                                   child: Image.asset(
                                     AssetsManager.imageiconImage,
                                     width: AppSize.s50,
@@ -155,10 +160,7 @@ class _OredersScreenState extends State<OredersScreen> {
                                       padding: const EdgeInsets.only(
                                           top: AppPadding.p4),
                                       child: Text(
-                                        '\$' +
-                                            myOrders[index]
-                                                .totalPrice
-                                                .toStringAsFixed(2),
+                                        '\$${myOrders[index].totalPrice.toStringAsFixed(2)}',
                                         style: StyleManager.body02_Regular(
                                             color: ColorManager.blackColor),
                                       ),
@@ -179,7 +181,7 @@ class _OredersScreenState extends State<OredersScreen> {
                                         : Container(),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Column(
                                   children: [
                                     Padding(
@@ -212,7 +214,7 @@ class _OredersScreenState extends State<OredersScreen> {
                                     ),
                                     indexCurrent == 1
                                         ? Container(
-                                            padding: EdgeInsets.symmetric(
+                                            padding: const EdgeInsets.symmetric(
                                                 horizontal: AppPadding.p10,
                                                 vertical: AppPadding.p2),
                                             decoration: BoxDecoration(
@@ -243,11 +245,25 @@ class _OredersScreenState extends State<OredersScreen> {
                                       Padding(
                                         padding: const EdgeInsets.all(
                                             AppPadding.p10),
-                                        child: Container(
-                                          child: Image.asset(
-                                              AssetsManager.orderImage),
+                                        child: Image.asset(
+                                            AssetsManager.orderImage),
+                                      ),
+                                      RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                                text:
+                                                    StringManager.yourOrderText,
+                                                style:
+                                                    StyleManager.h3_Regular()),
+                                            TextSpan(
+                                                text: '\n' +
+                                                    StringManager
+                                                        .areonthewayText,
+                                                style: StyleManager.h3_Bold())
+                                          ],
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                             Divider(
@@ -257,11 +273,18 @@ class _OredersScreenState extends State<OredersScreen> {
                           ],
                         ),
                       );
+                    } else {
+                      return Container();
                     }
                   },
                 ),
               ),
-            )
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: AppSizeScreen.screenHeight / 7,
+              ),
+            ),
           ],
         ),
       ),

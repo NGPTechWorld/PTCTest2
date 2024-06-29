@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/widgets/CartIcon.dart';
 
 class SilverAppBarDefault extends StatefulWidget {
   final bool isBack;
@@ -37,7 +34,7 @@ class _SilverAppBarDefaultState extends State<SilverAppBarDefault> {
                 Navigator.pop(context);
               },
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: AppPadding.p8),
+                padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),
                 child: Center(
                   child: CircleAvatar(
                     radius: AppSize.s30,
@@ -58,7 +55,7 @@ class _SilverAppBarDefaultState extends State<SilverAppBarDefault> {
       ),
       flexibleSpace: widget.isDiscont
           ? FlexibleSpaceBar(
-              background: Container(
+              background: SizedBox(
                 width: double.infinity,
                 child: Stack(
                   alignment: Alignment.bottomCenter,

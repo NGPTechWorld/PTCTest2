@@ -6,8 +6,7 @@ import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/CartItem.dart';
-import 'package:ptc2/models/item.dart';
-import 'package:ptc2/screens/ShoppingCart/screens/Checkout/CheckoutScreen.dart';
+import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 import 'package:ptc2/widgets/SilverAppBarDefault.dart';
 
 class AddCardMoneyScreen extends StatefulWidget {
@@ -25,7 +24,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
         color: ColorManager.whiteColor,
         child: CustomScrollView(
           slivers: [
-            SilverAppBarDefault(
+            const SilverAppBarDefault(
               isBack: true,
               isDiscont: false,
               titleBar: StringManager.titleBarAddCardText,
@@ -52,7 +51,8 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: AppPadding.p24),
+                      padding:
+                          const EdgeInsets.symmetric(vertical: AppPadding.p24),
                       child: TextField(
                         cursorColor: ColorManager.firstDarkColor,
                         decoration: InputDecoration(
@@ -92,7 +92,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: AppSize.s30,
                         ),
                         Expanded(
@@ -128,7 +128,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: ColorManager.primary1Color,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(AppSize.s30),
             topRight: Radius.circular(AppSize.s30),
           ),
@@ -153,7 +153,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                     ),
                   ),
                   Text(
-                    '\$' + myCart.subTotalPrice.toStringAsFixed(2),
+                    '\$${myCart.subTotalPrice.toStringAsFixed(2)}',
                     style: StyleManager.body02_Medium(
                       color: ColorManager.blackColor,
                     ),
@@ -178,7 +178,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                   ),
                   Text(
                     myCart.items.isNotEmpty
-                        ? '\$' + myCart.deliveryPrice.toStringAsFixed(2)
+                        ? '\$${myCart.deliveryPrice.toStringAsFixed(2)}'
                         : '\$0',
                     style: StyleManager.body02_Medium(
                       color: ColorManager.blackColor,
@@ -203,7 +203,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                   ),
                   Text(
                     myCart.items.isNotEmpty
-                        ? '\$' + myCart.totalPrice.toStringAsFixed(2)
+                        ? '\$${myCart.totalPrice.toStringAsFixed(2)}'
                         : '\$0',
                     style: StyleManager.body02_Medium(
                       color: ColorManager.blackColor,
@@ -221,12 +221,15 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                 color: ColorManager.firstColor,
                 onPressed: () {
                   myOrders.add(myCart);
+                  print(myOrders.length);
                   myCart = CartItem(
                       items: {},
                       delivery: myLocation,
                       cardMoney: cardsMoney[0],
                       isSuccess: false,
                       dateOrdered: DateTime.now());
+                  ScaffoldMessengerApp.showSnackbar(context,
+                      StringManager.orderAddedText, ColorManager.greenColor);
                   Navigator.popUntil(context, (route) => route.isFirst);
                 },
                 height: AppSizeScreen.screenHeight / 14,

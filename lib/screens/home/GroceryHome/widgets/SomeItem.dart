@@ -22,8 +22,8 @@ class SomeItem extends StatelessWidget {
         categoryCach.getItemforCategory("Tea", "general") as Iterable<Item>);
     return GridView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.85,
         mainAxisSpacing: AppPadding.p10,
@@ -64,7 +64,7 @@ class SomeItem extends StatelessWidget {
                         Positioned(
                           bottom: 0,
                           right: 0,
-                          child: Container(
+                          child: SizedBox(
                             height: AppSize.s24,
                             child: Center(
                               child: InkWell(

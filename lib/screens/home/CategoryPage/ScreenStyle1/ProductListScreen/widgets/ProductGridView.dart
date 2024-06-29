@@ -21,7 +21,7 @@ class _ProductGridViewState extends State<ProductGridView> {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.85,
         mainAxisSpacing: AppPadding.p10,
@@ -62,7 +62,7 @@ class _ProductGridViewState extends State<ProductGridView> {
                         Positioned(
                           bottom: 0,
                           right: 0,
-                          child: Container(
+                          child: SizedBox(
                             height: AppSize.s24,
                             child: Center(
                               child: InkWell(
@@ -100,7 +100,7 @@ class _ProductGridViewState extends State<ProductGridView> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: widget.items[index].get_price() + "\n",
+                              text: "${widget.items[index].get_price()}\n",
                               style: StyleManager.body01_Semibold(
                                 color: ColorManager.blackColor,
                               ),

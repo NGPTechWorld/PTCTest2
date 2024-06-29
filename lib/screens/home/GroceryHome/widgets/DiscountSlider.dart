@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
-import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -56,9 +55,8 @@ class _DiscountSliderState extends State<DiscountSlider> {
                               style: StyleManager.h1_Regular(
                                   color: ColorManager.primary1Color)),
                           TextSpan(
-                              text: "\n" +
-                                  itemsApp[index].get_discount() +
-                                  StringManager.text2RichText,
+                              text:
+                                  "\n${itemsApp[index].get_discount()}${StringManager.text2RichText}",
                               style: StyleManager.h1_Bold(
                                   color: ColorManager.primary1Color)),
                         ],

@@ -16,8 +16,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBarCategory(),
-          SliverToBoxAdapter(
+          const SliverAppBarCategory(),
+          const SliverToBoxAdapter(
             child: CategorysGridView(),
           ),
           SliverToBoxAdapter(

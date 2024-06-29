@@ -45,7 +45,8 @@ class StringManager {
   static const titleBarOrderText = "Orders";
   static const currentText = "Current";
   static const pastText = "Past";
-  static const meetOurRiderText = "Meet our rider,";
+  static const yourOrderText = "Your Order";
+  static const areonthewayText = "are on the way";
   //TrackOrderPage
   static const titleBarTrackOrderText = "Track Order";
   //Product Details
@@ -56,9 +57,10 @@ class StringManager {
   static const buyNowText = "Buy Now";
   //ScaffoldMessengerApp
   static const addItemCartText = "Item added to cart";
+  static const orderAddedText = "Order added";
   static const faildText = "Faild!";
-
   //global
   static const editText = "Edit";
   static const successText = "Success";
+  static const selectText = "Select";
 }

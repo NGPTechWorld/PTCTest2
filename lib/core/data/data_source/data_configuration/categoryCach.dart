@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:ptc2/models/Category.dart';
 import 'package:ptc2/models/item.dart';
 

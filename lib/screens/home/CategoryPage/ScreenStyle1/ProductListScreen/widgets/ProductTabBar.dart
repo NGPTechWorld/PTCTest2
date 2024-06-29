@@ -6,7 +6,6 @@ import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/Category.dart';
 import 'package:ptc2/models/item.dart';
 import 'package:ptc2/screens/home/CategoryPage/ScreenStyle1/ProductListScreen/widgets/ProductGridView.dart';
-import 'package:ptc2/screens/home/CategoryPage/ScreenStyle2/widgets/CategorysGridView2.dart';
 
 class ProductTabBar extends StatefulWidget {
   final CategoryItem categoryItem;

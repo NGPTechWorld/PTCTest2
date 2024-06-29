@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
-import 'package:ptc2/core/utils/string_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
@@ -26,7 +24,7 @@ class _ProductDetailsStyle2State extends State<ProductDetailsStyle2> {
       body: Container(
         color: ColorManager.whiteColor,
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           child: Container(
             color: ColorManager.whiteColor,
             child: Column(
@@ -45,7 +43,7 @@ class _ProductDetailsStyle2State extends State<ProductDetailsStyle2> {
                       color: ColorManager.whiteColor,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: AppPadding.p20, vertical: AppPadding.p30),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +63,7 @@ class _ProductDetailsStyle2State extends State<ProductDetailsStyle2> {
                                 child: ButtonProduct(item: widget.item)),
                           ),
                           TextPanelDetails(item: widget.item),
-                          SizedBox(height: AppSize.s20),
+                          const SizedBox(height: AppSize.s20),
                         ],
                       ),
                     ),
