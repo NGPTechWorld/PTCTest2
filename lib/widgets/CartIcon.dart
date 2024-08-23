@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -15,6 +16,7 @@ class CartIcon extends StatefulWidget {
 }
 
 class _CartIconState extends State<CartIcon> {
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -44,10 +46,12 @@ class _CartIconState extends State<CartIcon> {
                 constraints: const BoxConstraints(
                     minWidth: AppSize.s24, maxHeight: AppSize.s24),
                 child: Center(
-                  child: Text(
-                    "11",
-                    style: StyleManager.body02_Semibold(
-                      color: widget.color,
+                  child: GetX<CartController>(
+                    builder: (controller) => Text(
+                      cartController.current.value.toString(),
+                      style: StyleManager.body02_Semibold(
+                        color: widget.color,
+                      ),
                     ),
                   ),
                 ),

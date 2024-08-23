@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
@@ -10,8 +11,8 @@ import 'package:ptc2/screens/home/ProductDetails/ScreenStyle1/ProductDetailsScre
 import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 
 class RecommendedList extends StatelessWidget {
-  const RecommendedList({super.key});
-
+  RecommendedList({super.key});
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -131,6 +132,7 @@ class RecommendedList extends StatelessWidget {
                               child: InkWell(
                                 onTap: () {
                                   myCart.addItemToCart(itemsApp[index]);
+                                  cartController.increment(myCart.items.length);
                                   ScaffoldMessengerApp.showSnackbar(
                                       context,
                                       StringManager.addItemCartText,

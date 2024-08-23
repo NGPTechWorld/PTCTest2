@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -15,12 +16,14 @@ class ButtonProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CartController cartController = Get.find();
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MaterialButton(
           onPressed: () {
             myCart.addItemToCart(item);
+            cartController.increment(myCart.items.length);
             ScaffoldMessengerApp.showSnackbar(context,
                 StringManager.addItemCartText, ColorManager.greenColor);
           },
@@ -42,6 +45,7 @@ class ButtonProduct extends StatelessWidget {
             color: ColorManager.firstColor,
             onPressed: () {
               myCart.addItemToCart(item);
+              cartController.increment(myCart.items.length);
               Get.to(const ShoppingCartScreen());
             },
             height: AppSizeScreen.screenHeight / 14,

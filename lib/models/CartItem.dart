@@ -28,6 +28,7 @@ class CartItem {
     else
       items[item] = 1;
     subTotalPrice += item.get_finalPrice();
+
     totalPrice = subTotalPrice + deliveryPrice;
   }
 

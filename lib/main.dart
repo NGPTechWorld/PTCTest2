@@ -10,6 +10,7 @@ void main() {
   myOrders[1].totalPrice = 11.5;
   myOrders[2].totalPrice = 15.9;
   categoryCach.categoryscahe.addAll(categorys);
+
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(const MyApp());

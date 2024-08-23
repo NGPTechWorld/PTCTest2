@@ -47,7 +47,7 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
                 padding: const EdgeInsets.all(AppPadding.p10),
                 child: SizedBox(
                     height: AppSizeScreen.screenHeight / 3.7,
-                    child: const RecommendedList()),
+                    child: RecommendedList()),
               ),
             ),
             const SliverToBoxAdapter(
@@ -67,9 +67,9 @@ class _GroceryHomeScreenState extends State<GroceryHomeScreen> {
                 ),
               ),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.all(AppPadding.p10),
+                padding: const EdgeInsets.all(AppPadding.p10),
                 child: SomeItem(),
               ),
             ),

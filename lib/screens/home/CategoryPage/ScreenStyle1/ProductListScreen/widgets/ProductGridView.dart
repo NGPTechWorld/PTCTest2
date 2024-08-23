@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -18,6 +19,7 @@ class ProductGridView extends StatefulWidget {
 }
 
 class _ProductGridViewState extends State<ProductGridView> {
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -65,6 +67,7 @@ class _ProductGridViewState extends State<ProductGridView> {
                               child: InkWell(
                                 onTap: () {
                                   myCart.addItemToCart(widget.items[index]);
+                                  cartController.increment(myCart.items.length);
                                   ScaffoldMessengerApp.showSnackbar(
                                       context,
                                       StringManager.addItemCartText,

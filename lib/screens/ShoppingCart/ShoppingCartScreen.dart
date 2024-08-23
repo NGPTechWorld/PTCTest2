@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -18,6 +19,7 @@ class ShoppingCartScreen extends StatefulWidget {
 }
 
 class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +76,8 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                   onTap: () {
                                     setState(() {
                                       myCart.removeItemToCart(keys[index]);
+                                      cartController
+                                          .decrement(myCart.items.length);
                                     });
                                   },
                                   child: CircleAvatar(
@@ -99,6 +103,8 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                   onTap: () {
                                     setState(() {
                                       myCart.addItemToCart(keys[index]);
+                                      cartController
+                                          .increment(myCart.items.length);
                                     });
                                   },
                                   child: CircleAvatar(

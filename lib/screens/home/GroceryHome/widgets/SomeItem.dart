@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/categoryItemData.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
@@ -12,8 +13,8 @@ import 'package:ptc2/screens/home/ProductDetails/ScreenStyle2/ProductDetailsScre
 import 'package:ptc2/widgets/ScaffoldMessengerApp.dart';
 
 class SomeItem extends StatelessWidget {
-  const SomeItem({super.key});
-
+  SomeItem({super.key});
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     List<Item> itemFilter = [];
@@ -67,6 +68,7 @@ class SomeItem extends StatelessWidget {
                               child: InkWell(
                                 onTap: () {
                                   myCart.addItemToCart(itemsApp[index]);
+                                  cartController.increment(myCart.items.length);
                                   ScaffoldMessengerApp.showSnackbar(
                                       context,
                                       StringManager.addItemCartText,
