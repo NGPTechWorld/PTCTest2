@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/screens/OnBoardring/OnBoardring.dart';
+import 'package:ptc2/screens/on_boardring/on_boardring.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

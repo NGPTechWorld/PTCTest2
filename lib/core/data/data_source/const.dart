@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/models/CartItem.dart';
-import 'package:ptc2/models/LocationAddress.dart';
-import 'package:ptc2/models/CardMoney.dart';
+import 'package:ptc2/models/cart_item.dart';
+import 'package:ptc2/models/location_address.dart';
+import 'package:ptc2/models/card_money.dart';
 
 CartItem myCart = CartItem(
     items: {},
