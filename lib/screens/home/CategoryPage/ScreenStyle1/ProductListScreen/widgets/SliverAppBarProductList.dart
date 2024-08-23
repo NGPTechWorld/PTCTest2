@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -27,7 +28,7 @@ class _SliverAppBarProductListState extends State<SliverAppBarProductList> {
       stretch: true,
       leading: InkWell(
         onTap: () {
-          Navigator.pop(context);
+          Get.back();
         },
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -183,10 +184,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: MaterialButton(
             color: ColorManager.firstColor,
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => AddCardMoneyScreen()));
+              Get.to(const AddCardMoneyScreen());
             },
             height: AppSizeScreen.screenHeight / 14,
             minWidth: AppSizeScreen.screenWidth,

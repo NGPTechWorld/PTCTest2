@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/categoryItemData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
@@ -31,11 +32,7 @@ class _CategorysGridViewState extends State<CategorysGridView> {
           final category = categorys[index];
           return InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ProductListScreen(categoryItem: categorys[index])));
+              Get.to(ProductListScreen(categoryItem: categorys[index]));
             },
             child: Card(
               elevation: 0,

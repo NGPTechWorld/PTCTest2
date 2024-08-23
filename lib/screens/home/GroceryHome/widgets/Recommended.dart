@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
@@ -21,11 +22,7 @@ class RecommendedList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
           child: InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ProductDetailsScreenStyle1(item: itemsApp[index])));
+              Get.to(ProductDetailsScreenStyle1(item: itemsApp[index]));
             },
             child: Container(
               width: AppSizeScreen.screenWidth / 2.9,

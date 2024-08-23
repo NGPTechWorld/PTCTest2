@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/categoryItemData.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
@@ -35,11 +36,7 @@ class SomeItem extends StatelessWidget {
           padding: const EdgeInsets.all(AppPadding.p10),
           child: InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ProductDetailsScreenStyle2(item: itemFilter[index])));
+              Get.to(ProductDetailsScreenStyle2(item: itemFilter[index]));
             },
             child: Container(
               decoration: BoxDecoration(

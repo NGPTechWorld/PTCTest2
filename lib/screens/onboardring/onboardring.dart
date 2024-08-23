@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
@@ -59,10 +60,7 @@ class _OnboardringState extends State<Onboardring> {
                 child: TextButton(
                     style: StyleManager.buttonStyle(),
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const HomeScreen()));
+                      Get.off(() => const HomeScreen());
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(

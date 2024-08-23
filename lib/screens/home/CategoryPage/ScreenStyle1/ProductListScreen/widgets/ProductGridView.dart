@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -33,11 +34,7 @@ class _ProductGridViewState extends State<ProductGridView> {
           padding: const EdgeInsets.all(AppPadding.p10),
           child: InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ProductDetailsScreenStyle2(
-                          item: widget.items[index])));
+              Get.to(ProductDetailsScreenStyle2(item: widget.items[index]));
             },
             child: Container(
               decoration: BoxDecoration(

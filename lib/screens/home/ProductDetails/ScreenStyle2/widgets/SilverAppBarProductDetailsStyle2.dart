@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
 import 'package:ptc2/models/item.dart';
@@ -25,7 +26,7 @@ class _SilverAppBarProductDetailsStyle2State
       backgroundColor: ColorManager.whiteColor,
       leading: InkWell(
         onTap: () {
-          Navigator.pop(context);
+          Get.back();
         },
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),

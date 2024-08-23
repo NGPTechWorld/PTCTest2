@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const GroceryHomeScreen(),
     const CategoryScreen(),
     const CategoryScreenStyle2(),
-    OredersScreen()
+    const OredersScreen()
   ];
   void setIndex(int index) {
     setState(() {
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const GroceryHomeScreen(),
                       const CategoryScreen(),
                       const CategoryScreenStyle2(),
-                      OredersScreen()
+                      const OredersScreen()
                     ];
                     setState(() {
                       indexPage = value;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -41,10 +42,7 @@ class ButtonProduct extends StatelessWidget {
             color: ColorManager.firstColor,
             onPressed: () {
               myCart.addItemToCart(item);
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ShoppingCartScreen()));
+              Get.to(const ShoppingCartScreen());
             },
             height: AppSizeScreen.screenHeight / 14,
             minWidth: AppSizeScreen.screenWidth / 2.4,

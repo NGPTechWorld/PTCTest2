@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ptc2/core/data/data_source/const.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/utils/assets_manager.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/style_manager.dart';
 import 'package:ptc2/core/utils/values_manager.dart';
-import 'package:ptc2/models/CartItem.dart';
 import 'package:ptc2/screens/ShoppingCart/ShoppingCartScreen.dart';
 
 class CartIcon extends StatefulWidget {
@@ -20,8 +19,7 @@ class _CartIconState extends State<CartIcon> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ShoppingCartScreen()));
+        Get.to(const ShoppingCartScreen());
       },
       child: SizedBox(
         height: 50,
@@ -46,19 +44,11 @@ class _CartIconState extends State<CartIcon> {
                 constraints: const BoxConstraints(
                     minWidth: AppSize.s24, maxHeight: AppSize.s24),
                 child: Center(
-                  child: ValueListenableBuilder<List<CartItem>>(
-                    valueListenable: cartNotifier,
-                    builder: (context, cart, _) {
-                      return FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          cart.length.toString(),
-                          style: StyleManager.body02_Semibold(
-                            color: widget.color,
-                          ),
-                        ),
-                      );
-                    },
+                  child: Text(
+                    "11",
+                    style: StyleManager.body02_Semibold(
+                      color: widget.color,
+                    ),
                   ),
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ptc2/core/data/data_source/itemsData.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -26,11 +27,7 @@ class _DiscountSliderState extends State<DiscountSlider> {
           return InkWell(
             onTap: () {
               item = itemsApp[index];
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ProductDetailsScreenStyle3(item: item!)));
+              Get.to(ProductDetailsScreenStyle3(item: item!));
             },
             child: Padding(
               padding: const EdgeInsets.all(AppPadding.p10),
