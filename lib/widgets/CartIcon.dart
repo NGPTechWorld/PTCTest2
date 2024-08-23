@@ -34,29 +34,31 @@ class _CartIconState extends State<CartIcon> {
               height: 30,
               color: widget.color,
             ),
-            Positioned(
-              left: AppSize.s10,
-              bottom: AppSize.s20,
-              child: Container(
-                padding: const EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                  color: ColorManager.secoundColor,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                constraints: const BoxConstraints(
-                    minWidth: AppSize.s24, maxHeight: AppSize.s24),
-                child: Center(
-                  child: GetX<CartController>(
-                    builder: (controller) => Text(
-                      cartController.current.value.toString(),
-                      style: StyleManager.body02_Semibold(
-                        color: widget.color,
+            GetX<CartController>(
+              builder: (controller) => cartController.current.value == 0
+                  ? Container()
+                  : Positioned(
+                      left: AppSize.s10,
+                      bottom: AppSize.s20,
+                      child: Container(
+                        padding: const EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                          color: ColorManager.secoundColor,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        constraints: const BoxConstraints(
+                            minWidth: AppSize.s24, maxHeight: AppSize.s24),
+                        child: Center(
+                          child: Text(
+                            cartController.current.value.toString(),
+                            style: StyleManager.body02_Semibold(
+                              color: widget.color,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),
