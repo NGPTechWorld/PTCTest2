@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     AppSizeScreen.screenWidth = AppSizeScreen.screenSize.width;
     AppSizeScreen.screenHeight = AppSizeScreen.screenSize.height;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       color: ColorManager.firstDarkColor,
       home: const Onboardring(),
     );

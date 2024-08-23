@@ -63,26 +63,22 @@ class _CategorysGridView2State extends State<CategorysGridView2> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Flexible(
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                widget.category.items['general']![index].name,
-                                style: StyleManager.h4_Bold(),
-                              ),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              widget.category.items['general']![index].name,
+                              style: StyleManager.h4_Bold(),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Flexible(
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  widget.category.items['general']![index]
-                                      .details,
-                                  style: StyleManager.body02_Medium(
-                                      color: ColorManager.primary5Color),
-                                ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                widget
+                                    .category.items['general']![index].details,
+                                style: StyleManager.body02_Medium(
+                                    color: ColorManager.primary5Color),
                               ),
                             ),
                           ),
