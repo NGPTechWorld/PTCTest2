@@ -1,4 +1,4 @@
-package com.example.ptc2
+package com.ngptechworld.foodcenter
 
 import io.flutter.embedding.android.FlutterActivity
 

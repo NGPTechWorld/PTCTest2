@@ -68,14 +68,13 @@ class _SilverAppBarDefaultState extends State<SilverAppBarDefault> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          bottom: AppPadding.p30,
+                          bottom: AppPadding.p50,
                           left: AppPadding.p100,
                           right: AppPadding.p10),
                       child: Text(
-                        "25%",
+                        "Discount",
                         style: StyleManager.h1_Bold(
-                            color: ColorManager.whiteColor,
-                            fontsize: AppSize.s110),
+                            color: ColorManager.whiteColor, fontsize: 40),
                       ),
                     )
                   ],

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/core/data/data_source/const.dart';
 import 'package:ptc2/core/utils/color_manager.dart';
 import 'package:ptc2/core/utils/string_manager.dart';
@@ -17,6 +19,7 @@ class AddCardMoneyScreen extends StatefulWidget {
 }
 
 class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
+  CartController cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -221,7 +224,7 @@ class _AddCardMoneyScreenState extends State<AddCardMoneyScreen> {
                 color: ColorManager.firstColor,
                 onPressed: () {
                   myOrders.add(myCart);
-                  print(myOrders.length);
+                  cartController.current.value = 0;
                   myCart = CartItem(
                       items: {},
                       delivery: myLocation,

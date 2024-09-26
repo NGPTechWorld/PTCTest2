@@ -20,6 +20,7 @@ class ShoppingCartScreen extends StatefulWidget {
 
 class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
   CartController cartController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +28,13 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
         color: ColorManager.whiteColor,
         child: CustomScrollView(
           slivers: [
-            SilverAppBarDefault(
-              isBack: true,
-              isDiscont: false,
-              titleBar:
-                  StringManager.shoppingCartText + " (${myCart.items.length})",
+            Obx(
+              () => SilverAppBarDefault(
+                isBack: true,
+                isDiscont: cartController.isDiscont.value,
+                titleBar: StringManager.shoppingCartText +
+                    " (${myCart.items.length})",
+              ),
             ),
             SliverToBoxAdapter(
               child: Padding(

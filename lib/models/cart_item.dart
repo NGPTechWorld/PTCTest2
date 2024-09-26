@@ -1,6 +1,10 @@
+import 'package:get/get.dart';
+import 'package:ptc2/core/cart/cart_controller.dart';
 import 'package:ptc2/models/card_money.dart';
 import 'package:ptc2/models/location_address.dart';
 import 'package:ptc2/models/item.dart';
+
+CartController cartController = Get.find();
 
 class CartItem {
   static int cntId = 0;
@@ -28,7 +32,7 @@ class CartItem {
     else
       items[item] = 1;
     subTotalPrice += item.get_finalPrice();
-
+    if (item.isDiscount) cartController.isDiscont.value = true;
     totalPrice = subTotalPrice + deliveryPrice;
   }
 
@@ -38,6 +42,8 @@ class CartItem {
     else
       items.remove(item);
     subTotalPrice = (item.get_finalPrice() - subTotalPrice).abs();
+    if (item.isDiscount) cartController.isDiscont.value = false;
+
     totalPrice = subTotalPrice + deliveryPrice;
   }
 

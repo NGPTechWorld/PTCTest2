@@ -10,7 +10,7 @@ List<Item> itemsApp = [
     quantity: "1 kg",
     category: "Fruits",
     isDiscount: true,
-    discount: 10,
+    discount: 50,
     numReviews: 50,
     rate: 4.5,
     images: [
