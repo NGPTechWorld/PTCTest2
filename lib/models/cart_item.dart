@@ -39,10 +39,12 @@ class CartItem {
   void removeItemToCart(Item item) {
     if (items[item]! > 1)
       items[item] = items[item]! - 1;
-    else
+    else {
       items.remove(item);
+      if (item.isDiscount) cartController.isDiscont.value = false;
+    }
+
     subTotalPrice = (item.get_finalPrice() - subTotalPrice).abs();
-    if (item.isDiscount) cartController.isDiscont.value = false;
 
     totalPrice = subTotalPrice + deliveryPrice;
   }
